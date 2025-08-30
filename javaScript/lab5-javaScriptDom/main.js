@@ -41,6 +41,8 @@ function inputNumbers(){
         return (res);
     }
 function splitAndValidate(inp){
+    if(inp == undefined)
+        return false;
 var arr = inp.split(',');
 for(var i =0 ; i<arr.length; i++){
     if(isNaN(Number(arr[i])))
