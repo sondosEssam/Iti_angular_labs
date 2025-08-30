@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="first">
+        <form id="form">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" >
+                <p class="invalid name">name must be >4 letters</p>
+            </div>
+            <div>
+                <label for="password">Pass</label>
+                <input type="password" id="password">
+                <p class="invalid password">pass length must be >8 letters</p>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email"  id="email">
+                <p class="invalid email">mail not valid</p>
+            </div>
+            <div>
+                <label for="gender">Gender</label>
+                <p class="invalid gender">choose your gender</p>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">male</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">female</label>
+            </div>
+            <div>
+                <label for="sport">Sports</label>
+                <p class="invalid sport">choose your sport</p>
+                <input type="checkbox" name="sport" id="tennis" value="tennis">
+                <label for="tennis">Tennis</label>
+
+                <input type="checkbox" name="sport" id="footbal" value="footbal">
+                <label for="footbal">footbal</label>
+                <input type="checkbox" name="sport" id="volleyball" value="volleyball">
+                <label for="volleyball">volleyball</label>
+            </div>
+            <div>
+                <select name="country" id="country">
+                    <option value="egypt">Egypt</option>
+                </select>
+            </div>
+            <div class="final">
+                <button id="btnSubmit" type="submit">submit</button>
+                <button id="btnReset" type="reset">Reset</button>
+                
+            </div>
+        </form>
+
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Pssword</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Sports</th>
+                <th>Country</th>
+                
+            </thead>
+            <tbody id="data1">
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="./main.js"></script>
+</body>
+</html>
