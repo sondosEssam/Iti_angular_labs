@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styels.css">
+</head>
+<body>
+<div class="container">
+    <div class="first">
+        <div class="form">
+            <label for="name">Name</label>
+            <input type="text" id="name">
+            <p class="invalid name">Name must be between 3 and 25 letters</p>
+            <label for="id">ID</label>
+            <input type="text" id="id">
+            <p class="invalid id">id can't be repeated</p>
+            <label for="age">Age</label>
+            <input type="text" id="age">
+            <div class="submit">
+                <button id="btn">Add Student</button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </thead>
+            <tbody id="data1">
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="./main.js"></script>
+</body>
+</html>

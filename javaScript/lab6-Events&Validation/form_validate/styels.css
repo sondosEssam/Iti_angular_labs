@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.invalid{
+    color:red;
+    display: none;
+}
+.container{
+    background-color: aliceblue;
+    width: 90%;
+    margin: 0 auto;
+    height: 100vh;
+    padding: 15px;
+}
