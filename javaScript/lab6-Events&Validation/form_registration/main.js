@@ -43,7 +43,7 @@ function validateChoices(list) {
 }
 
 function validateChoicesApplying(list, number) {
-  if (validateChoices(list, number)) {
+  if (!validateChoices(list, number)) {
     errors[number].classList.add("true");
     error_indicator = 1;
     return false;
@@ -67,15 +67,30 @@ function formValidate() {
 }
 
 //functions
-//first
+function getCheckedRadioValue(list) {
+  for (let i = 0; i < list.length; i++) {
+    if (list[i].checked) return list[i].value;
+  }
+  return null;
+}
+
+function getCheckedCheckboxValues(list) {
+  let values = [];
+  for (let i = 0; i < list.length; i++) {
+    console.log(list[i]);
+    
+    if (list[i].checked) values.push(list[i].value);
+  }
+  return values.join(", ");
+}
 function addrow() {
   var rowData = {
     name: nameInput.value,
     password: password.value,
     email: email.value,
-    gender: gender.value,
-    sport: sport.values,
-    country: Country.values,
+    gender: getCheckedRadioValue(gender),
+    sport: getCheckedCheckboxValues(sport),
+    country: Country.value,
   };
 
   tableData.push(rowData);
@@ -95,7 +110,7 @@ function creatElement(input) {
   tdEmail.textContent = input.email;
   tdName.textContent = input.name;
   tdGender.textContent = input.gender;
-  tdSports.textContent = input.tdSports;
+  tdSports.textContent = input.sport;
   tdCountry.textContent = input.country;
 
   console.log(nameInput.value,password.value,email.value,gender.value,sport,Country);
