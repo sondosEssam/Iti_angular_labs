@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins",sans-serif;
+    font-weight: 400;
+}
+.container{
+    background-color: rgb(199, 162, 136);
+    width: 90%;
+    margin: 50px auto;
+    padding: 10px;
+    text-align: center;
+}
+h1{
+    font-family: 700;
+    margin-bottom: 50px;
+}
+img{
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 50px;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.actions{
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    margin: 0 auto;
+}
+.actions .btn{
+    padding: 5px 30px;
+    color: white;
+    border: none;
+}
+.actions .btn.play{
+    background-color: green;
+}
+.actions .btn.stop{
+
+    background-color:red;
+}
+.actions .direction{
+    padding: 5px 15px;
+    color: white;
+    border: none;
+    background-color:yellow;
+    font-size: 20px;
+}
+.Slider{
+    position:relative;
+}
+.Slider img{
+    opacity: 1;
+}
+.Slider .hidden{
+    position: absolute;
+    /* left: 100%; */
+    opacity: 0;
+}
+
+
+
+
+
+/* aniamtions */
+
+/* Slide out to the right */
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to   { transform: translateX(-100%); opacity: 0; }
+}
+
+.slide-out {
+  animation: slideOutRight 0.5s ease forwards;
+}
+
+/* Slide in from the left */
+@keyframes slideInLeft {
+    from { transform: translateX(100%); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in {
+    animation: slideInLeft 0.5s ease forwards;
+}
+
+
+
+
+
+
+@keyframes slideOutRightPrev {
+    from { transform: translateX(0); opacity: 1; }
+    to   { transform: translateX(100%); opacity: 0; }
+}
+.slide-out.prev {
+    animation: slideOutRightPrev 0.5s ease forwards;
+}
+@keyframes slideInLeftPrev {
+    from { transform: translateX(-100%); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+}
+.slide-in.prev {
+    animation: slideInLeftPrev 0.5s ease forwards;
+}
