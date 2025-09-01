@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="container">
+        <h1>Ajax User Data Fetcher</h1>
+        <hr>
+        <div class="operations">
+            <button class="btn btn-info " id="fetchUsers">Fetch Users</button>
+            <button class="btn btn-light" id="searchButton"><i class="fas fa-search"></i></button>
+            <input type="text" class="form-control w-25" id= "searchInput" placeholder="search by id">
+        </div>
+        <table class="table mt-2">
+            <thead class="thead-dark">
+                <tr class="table-info">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>userName</th>
+                    <th>Phone</th>
+                    <th colspan="2">
+                    Actions
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+
+
+
+        <div id="userFormContainer" class="container mt-4" >
+  <form id="userForm"style="display: none;">
+    <input type="hidden" id="userId">
+    <div class="mb-3">
+      <label for="nameInput" class="form-label">Name</label>
+      <input type="text" class="form-control" id="nameInput" placeholder="Enter name">
+    </div>
+    <div class="mb-3">
+      <label for="emailInput" class="form-label">Email</label>
+      <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+    </div>
+    <div class="mb-3">
+      <label for="userNameInput" class="form-label">Username</label>
+      <input type="text" class="form-control" id="userNameInput" placeholder="Enter username">
+    </div>
+    <div class="mb-3">
+      <label for="phoneInput" class="form-label">Phone</label>
+      <input type="text" class="form-control" id="phoneInput" placeholder="Enter phone">
+    </div>
+    <button type="submit" class="btn btn-primary" id="formSubmitButton">Add</button>
+  </form>
+</div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

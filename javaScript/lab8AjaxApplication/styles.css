@@ -1,0 +1,8 @@
+.operations{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.operations .btn.btn-info{
+    margin-right: auto;
+}
