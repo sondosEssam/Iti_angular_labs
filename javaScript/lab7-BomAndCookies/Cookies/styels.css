@@ -19,34 +19,49 @@ input.correct{
     border: solid 2px green;
 }
 .container{
-    background-color: aliceblue;
+    /* background-color: rgb(75, 75, 75); */
     width: 90%;
     margin: 0 auto;
     height: 100vh;
     padding: 15px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    gap: 20px
 }
 .first{
-    background-color:azure;
-    height: 50vh;
-}
-.first .form{
-    background-color: azure;
+    background-color:rgb(255, 255, 255);
+    height: 65vh;
+    width: 90%;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top:10px ;
+    align-items:center;
+    justify-content: center;
+    gap: 20px
 }
-.first .form input{
-    width: 50%;
-    display: block;
+.first #form{
+    background-color: rgb(209, 222, 222);
+    display: flex;
+    height: 100%;
+    width: 60%;
+    box-shadow: 5px 5px 10px grey;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:10px ;
+    gap:20px;
+}
+.first #form input{
     margin: 2px 0px 15px 0px;
+    margin-bottom: 20px;
     border-radius: 5px;
     border: none;
     height: 30px;
     text-align: center;
     padding: 10px;
 }
-.first .form button{
+.first #form button{
     margin-bottom: 15px;
     padding: 5px 15px;
     font-size: medium;

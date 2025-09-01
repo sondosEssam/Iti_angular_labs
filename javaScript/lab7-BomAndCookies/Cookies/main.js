@@ -54,10 +54,11 @@ function validateChoicesApplying(list, number) {
 
 
 function formValidate() {
- validateGeneral(age, /(1[5-9])|([2-8][0-9])/, 1);
- validateGeneral(nameInput, /[a-z]{3,25}/, 0);
+var res1= validateGeneral(age, /(1[5-9])|([2-8][0-9])/, 1);
+var res2= validateGeneral(nameInput, /[a-z]{3,25}/, 0);
   if (
-    error_indicator == 0 &&
+   res1 &&
+   res2 &&
     validateChoicesApplying(gender, 2) 
   ) {
     addCookie();
@@ -86,9 +87,9 @@ function addCookie() {
 //events
 //first
 submit.addEventListener("click",function(){
-    if(formValidate())
-            window.open("about.html","_blank");
-    
+    if(formValidate()){
+            window.location.href="about.html";
+          }
 } );
 form.addEventListener("submit", function (e) {
   e.preventDefault();

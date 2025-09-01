@@ -44,6 +44,6 @@ else{
 
 visits += 1;
 
-history1.innerHTML = visits;
+history1.innerHTML = history.length;
 document.cookie=`visits=${visits};`
 console.log(history1);
