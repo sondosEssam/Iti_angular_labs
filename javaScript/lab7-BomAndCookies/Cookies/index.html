@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styels.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div class="container">
+    <div class="first">
+        <form id="form">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" >
+                <p class="invalid name">name must be >4 letters</p>
+            </div>
+            <div>
+                <label for="age">age</label>
+                <input type="text" id="age">
+                <p class="invalid age">age must be at least 15/p>
+            </div>
+            <div>
+                <label for="gender">Gender</label>
+                <p class="invalid gender">choose your gender</p>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male"><i class="fa-solid fa-person"></i></label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female"><i class="fa-solid fa-person-dress"></i></label>
+            </div>
+            <div>
+                <select name="color" id="color">
+                    <option value="red">red</option>
+                    <option value="blue">blue</option>
+                    <option value="green">green</option>
+                </select>
+            </div>
+            <div class="final">
+                <button id="btnSubmit" type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="./main.js"></script>
+</body>
+</html>
