@@ -1,10 +1,9 @@
 //selectors 
 var tbody = document.getElementById("tbody");
-
 var fetchUsersButton = document.getElementById("fetchUsers");
 var searchInput = document.getElementById("searchInput");
 var searchButton = document.getElementById("searchButton");
-
+var addButton = document.getElementById("addBtn");
 
 
 //form 
@@ -32,13 +31,10 @@ var update_id = null;
     xml.open(method,url,isAsync);
     xml.setRequestHeader("Content-Type", "application/json");
     xml.onreadystatechange = function(){
-        console.log(xml.status);
         
         if(xml.readyState === 4 && xml.status >= 200 && xml.status < 300){
              users =JSON.parse(xml.responseText);
-             console.log('1');
              
-             console.log(xml.response);
             callback(users);
         }
     }
@@ -73,12 +69,11 @@ for(let i =0; i<users.length;i++){
   updateButton.addEventListener('click', function (){
         showForm("update", ids[i]);
         update_id = ids[i];
-        console.log(update_id);
 
     });
 
     deleteButton.addEventListener('click', function (){
-        // console.log(ids[i]);
+
         handleDelete(ids[i]);
     });
     tr.appendChild(updateButton);
@@ -156,7 +151,6 @@ function showForm(type, idu){
 
 function handleUpdate(update_id){
     var userData = getDataFromForm();
-    console.log(userData);
     
     requests("PUT",`https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users/${update_id}`,JSON.stringify(userData),true,function(){
         requests("GET","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users","",true,tableAppendUser);
@@ -169,10 +163,11 @@ function handleUpdate(update_id){
 function handleAdd(){
     var userData = getDataFromForm();
     requests("POST","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users",JSON.stringify(userData),true,function(){
-        form.style.display = "none";
         requests("GET","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users","",true,tableAppendUser);
     });
 }
+
+
 
 
 
@@ -192,30 +187,33 @@ fetchUsersButton.addEventListener('click',function(){
 });
 
 
+
+
 searchButton.addEventListener('click',function(){
     var id = searchInput.value;
     requests("GET",`https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users/${id}`,"",true,getOneUser);
 });
 
+
+
+
+
 form.addEventListener('submit',function(e){
     e.preventDefault();
-    // showFormAndGetData();
-    if(formSubmitButton.innerHTML == "Add User"){
+ 
+});
+
+formSubmitButton.addEventListener('click',function(e){
+    if(e.target.innerHTML == "Add User"){
         handleAdd();
-    }else if(formSubmitButton.innerHTML == "Update User"){
-        console.log(update_id);
-        
+    }else if(e.target.innerHTML == "Update User"){
         handleUpdate(update_id);
     }
     form.style.display = "none";
 });
 
-formSubmitButton.addEventListener('click',function(e){
-    if(formSubmitButton.innerHTML == "Add User"){
-        handleAdd();
-    }else if(formSubmitButton.innerHTML == "Update User"){
-        console.log(update_id);
-        handleUpdate(update_id);
-    }
-    form.style.display = "none";
+
+//add 
+addButton.addEventListener('click',function(){
+    showForm("add");
 });
