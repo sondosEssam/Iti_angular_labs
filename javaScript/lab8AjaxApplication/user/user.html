@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../bootstrap.min.css">
-
+        <link rel="stylesheet" href="../styles.css">
     
         <title>Document</title>
 </head>
@@ -14,11 +14,23 @@
     <h1  class="mb-5">Welcome <span id="name"></span></h1>
     
     <div class="row justify-content-between">
-    <div id="phoneNumber" class="p-3 w-25 border rounded  ">text</div>
-    <div id="email" class="p-3 w-25 border rounded  ">text</div>
-    <div id="userName" class="p-3 w-25 border rounded  mx-auto">text</div>
+        <div id="userName" class="p-3 w-75 m-auto mb-4 border rounded">
+        <i class="fas fa-user"></i>
+        <span class="ms-2" id="userNameText"></span>
     </div>
+    <div id="phoneNumber" class="p-3 m-auto w-75 border mb-4 rounded ">
+        <i class="fas fa-phone"></i>
+        <a href="tel:+"></a>
+        <a href="tel:+" class="ms-2 alert-link m-auto" id="phoneNumberText"></a>
+    </div>
+    <div id="email" class="p-3 w-75 mb-4 border rounded  m-auto">
+        <a href="mailto:"></a>
+        <i class="fas fa-envelope"></i>
+        <a  href="mailto:" class="ms-2  alert-link" id="emailText"></a>
     </div>
 
+    </div>
+    </div>
+<script src="./user.js"></script>
 </body>
 </html>

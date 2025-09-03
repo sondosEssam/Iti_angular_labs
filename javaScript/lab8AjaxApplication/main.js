@@ -4,6 +4,7 @@ var fetchUsersButton = document.getElementById("fetchUsers");
 var searchInput = document.getElementById("searchInput");
 var searchButton = document.getElementById("searchButton");
 var addButton = document.getElementById("addBtn");
+var allInputs = document.querySelector("form .form-control");
 
 
 //form 
@@ -47,6 +48,11 @@ var update_id = null;
 
 //structure
 
+
+
+
+
+//append tbale 
 function tableAppendUser(users){
 console.log(users);
     tbody.innerHTML="";
@@ -57,7 +63,7 @@ for(let i =0; i<users.length;i++){
     var deleteButton = document.createElement("button");
     tr.innerHTML = `
     <td>${users[i].id}</td>
-    <td>${users[i].name}</td>
+    <td><a href="./user/user.html" class="btn btn-secondary" onclick="setCookie(${users[i].id})">${users[i].name}</a></td>
     <td>${users[i].email}</td>
     <td>${users[i].userName}</td>
     <td>${users[i].phone}</td>
@@ -90,7 +96,7 @@ function getOneUser(users){
     var deleteButton = document.createElement("button");
     tr.innerHTML = `
     <td>${users.id}</td>
-    <td>${users.name}</td>
+    <td><a href="./user/user.html" class="btn btn-secondary" onclick="setCookie(${users.id})">${users.name}</a></td>
     <td>${users.email}</td>
     <td>${users.userName}</td>
     <td>${users.phone}</td>
@@ -105,6 +111,8 @@ function getOneUser(users){
 
     deleteButton.addEventListener('click', function (){
         handleDelete(users.id);
+        console.log(users.id);
+        
     });
     tr.appendChild(updateButton);
 
@@ -116,13 +124,28 @@ function getOneUser(users){
 
 function handleDelete(id)
 {
+
     requests("DELETE",`https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users/${id}`,"",true,function(){
         tbody.innerHTML="";
         requests("GET","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users","",true,tableAppendUser);
     });
 }
+function handleUpdate(update_id){
+    var userData = getDataFromForm();
+    
+    requests("PUT",`https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users/${update_id}`,JSON.stringify(userData),true,function(){
+        requests("GET","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users","",true,tableAppendUser);
+    });
+}
+function handleAdd(){
+    var userData = getDataFromForm();
+    requests("POST","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users",JSON.stringify(userData),true,function(){
+        requests("GET","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users","",true,tableAppendUser);
+    });
+}
 
 
+//form related
 
 function getDataFromForm() {
     return {
@@ -133,8 +156,6 @@ function getDataFromForm() {
         phone: phone.value
     };
 }
-
-
 
 function showForm(type, idu){
     form.style.display = "block";
@@ -149,26 +170,12 @@ function showForm(type, idu){
 }
 
 
-function handleUpdate(update_id){
-    var userData = getDataFromForm();
+//set cookies
+function setCookie(id){
+    document.cookie = `id=${id}; path=/`;
+    console.log(document.cookie);
     
-    requests("PUT",`https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users/${update_id}`,JSON.stringify(userData),true,function(){
-        requests("GET","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users","",true,tableAppendUser);
-    });
 }
-
-
-
-
-function handleAdd(){
-    var userData = getDataFromForm();
-    requests("POST","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users",JSON.stringify(userData),true,function(){
-        requests("GET","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users","",true,tableAppendUser);
-    });
-}
-
-
-
 
 
 
@@ -189,10 +196,17 @@ fetchUsersButton.addEventListener('click',function(){
 
 
 
+
+
+
+
 searchButton.addEventListener('click',function(){
     var id = searchInput.value;
     requests("GET",`https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users/${id}`,"",true,getOneUser);
 });
+
+
+
 
 
 
@@ -203,6 +217,12 @@ form.addEventListener('submit',function(e){
  
 });
 
+
+
+
+
+
+
 formSubmitButton.addEventListener('click',function(e){
     if(e.target.innerHTML == "Add User"){
         handleAdd();
@@ -211,6 +231,8 @@ formSubmitButton.addEventListener('click',function(e){
     }
     form.style.display = "none";
 });
+
+
 
 
 //add 
