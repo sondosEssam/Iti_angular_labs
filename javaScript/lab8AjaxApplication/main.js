@@ -4,7 +4,10 @@ var fetchUsersButton = document.getElementById("fetchUsers");
 var searchInput = document.getElementById("searchInput");
 var searchButton = document.getElementById("searchButton");
 var addButton = document.getElementById("addBtn");
-var allInputs = document.querySelector("form .form-control");
+//validation
+var allInputs = document.querySelectorAll("form div input.form-control");
+var errorMessages = document.querySelectorAll("p.error-message.hidden");
+var successMessage = document.querySelector(".sucess-message")
 
 
 //form 
@@ -26,7 +29,6 @@ var update_id = null;
 
 
 //apis
-
  function requests(method,url,body,isAsync,callback){
     var xml = new XMLHttpRequest();
     xml.open(method,url,isAsync);
@@ -50,77 +52,44 @@ var update_id = null;
 
 
 
-
-
 //append tbale 
 function tableAppendUser(users){
-console.log(users);
     tbody.innerHTML="";
-for(let i =0; i<users.length;i++){
 
-    var tr = document.createElement("tr");
-    var updateButton = document.createElement("button");
-    var deleteButton = document.createElement("button");
-    tr.innerHTML = `
-    <td>${users[i].id}</td>
-    <td><a href="./user/user.html" class="btn btn-secondary" onclick="setCookie(${users[i].id})">${users[i].name}</a></td>
-    <td>${users[i].email}</td>
-    <td>${users[i].userName}</td>
-    <td>${users[i].phone}</td>
-    `
-    ids.push(users[i].id);
+    for(let i =0; i<users.length;i++)
+    {
 
-    updateButton.innerHTML="<i class='fas fa-edit'></i>";
-    deleteButton.innerHTML="<i class='fas fa-trash'></i>";
-  updateButton.addEventListener('click', function (){
-        showForm("update", ids[i]);
-        update_id = ids[i];
+        var tr = document.createElement("tr");
+        var updateButton = document.createElement("button");
+        var deleteButton = document.createElement("button");
+        tr.innerHTML = `
+        <td>${users[i].id}</td>
+        <td><a href="./user/user.html" class="btn btn-secondary" onclick="setCookie(${users[i].id})">${users[i].name}</a></td>
+        <td>${users[i].email}</td>
+        <td>${users[i].userName}</td>
+        <td>${users[i].phone}</td>
+        `
+        ids.push(users[i].id);
 
-    });
+        updateButton.innerHTML="<i class='fas fa-edit'></i>";
+        deleteButton.innerHTML="<i class='fas fa-trash'></i>";
+        updateButton.addEventListener('click', function (){
+            showForm("update", ids[i]);
+            update_id = ids[i];
+        });
 
-    deleteButton.addEventListener('click', function (){
-
-        handleDelete(ids[i]);
-    });
-    tr.appendChild(updateButton);
-    tr.appendChild(deleteButton);
-    tbody.appendChild(tr);
-}
-}
-
-
-function getOneUser(users){
-    tbody.innerHTML="";
-    var tr = document.createElement("tr");
-    var updateButton = document.createElement("button");
-    var deleteButton = document.createElement("button");
-    tr.innerHTML = `
-    <td>${users.id}</td>
-    <td><a href="./user/user.html" class="btn btn-secondary" onclick="setCookie(${users.id})">${users.name}</a></td>
-    <td>${users.email}</td>
-    <td>${users.userName}</td>
-    <td>${users.phone}</td>
-    `
-    updateButton.innerHTML="<i class='fas fa-edit'></i>";
-    deleteButton.innerHTML="<i class='fas fa-trash'></i>";
-
-    updateButton.addEventListener('click', function (){
-        update_id = users.id;
-        showForm("update",update_id);
-    });
-
-    deleteButton.addEventListener('click', function (){
-        handleDelete(users.id);
-        console.log(users.id);
-        
-    });
-    tr.appendChild(updateButton);
-
-    tr.appendChild(deleteButton);
-    tbody.appendChild(tr);
+        deleteButton.addEventListener('click', function (){
+            handleDelete(ids[i]);
+        });
+        tr.appendChild(updateButton);
+        tr.appendChild(deleteButton);
+        tbody.appendChild(tr);
+    }
 }
 
 
+
+//operatoins
 
 function handleDelete(id)
 {
@@ -129,6 +98,13 @@ function handleDelete(id)
         tbody.innerHTML="";
         requests("GET","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users","",true,tableAppendUser);
     });
+    successMessage.innerHTML="user deleted successfully"
+    window.scrollTo(0, 0);
+    successMessage.classList.add("show");
+    setTimeout(function(){
+            successMessage.classList.remove("show");
+    },2000)
+
 }
 function handleUpdate(update_id){
     var userData = getDataFromForm();
@@ -143,6 +119,7 @@ function handleAdd(){
         requests("GET","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users","",true,tableAppendUser);
     });
 }
+
 
 
 //form related
@@ -181,6 +158,58 @@ function setCookie(id){
 
 
 
+//validation
+function  ValidateSingleInput(elemnt,val){
+var regex = "";
+var res = false;
+    switch (val){
+    case 0:
+        regex=/[a-z]{3,}/;
+        break;
+    case 1:
+        regex = /^\S+@\S+\.\S+$/
+        break;
+    case 2:
+        regex=/^[A-Za-z_][A-Za-z0-9_]*$/;
+        break;
+    case 3:
+        regex=/(011|010|012)[0-9]{3,8}/;
+        break;
+}
+    
+    regex.test(elemnt.value)? res= true: res= false;
+return  res;
+}
+function validateWholeForm(){
+var wrong_indicator = 0;
+for(var i =0; i<allInputs.length;i++){
+    
+    if(ValidateSingleInput(allInputs[i],i)){
+        allInputs[i].classList.add('is-valid');
+        allInputs[i].classList.remove('is-invalid');
+        errorMessages[i].style.display="none";
+    
+    }
+    else
+    {
+        allInputs[i].classList.add('is-invalid');
+        allInputs[i].classList.remove('is-valid');
+                errorMessages[i].style.display="block";
+        wrong_indicator = 1;
+    
+    }
+}
+wrong_indicator == 0? wrong_indicator = true: wrong_indicator=false;
+return wrong_indicator;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -188,6 +217,8 @@ function setCookie(id){
 
 
 //events 
+
+//get users
 fetchUsersButton.addEventListener('click',function(){
     requests("GET","https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users","",true,tableAppendUser);
     
@@ -199,10 +230,10 @@ fetchUsersButton.addEventListener('click',function(){
 
 
 
-
+//serach by id
 searchButton.addEventListener('click',function(){
     var id = searchInput.value;
-    requests("GET",`https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users/${id}`,"",true,getOneUser);
+    requests("GET",`https://68b58c51e5dc090291af64bd.mockapi.io/api/v1/users/${id}`,"",true,tableAppendUser);
 });
 
 
@@ -211,31 +242,36 @@ searchButton.addEventListener('click',function(){
 
 
 
-
+//form submissions in details
 form.addEventListener('submit',function(e){
     e.preventDefault();
  
 });
-
-
-
-
-
-
-
 formSubmitButton.addEventListener('click',function(e){
-    if(e.target.innerHTML == "Add User"){
+    if(validateWholeForm())
+    {
+
+        if(e.target.innerHTML == "Add User"){
         handleAdd();
+        successMessage.innerHTML="user added succesfully"
     }else if(e.target.innerHTML == "Update User"){
         handleUpdate(update_id);
+        successMessage.innerHTML="user updated succesfully"
     }
-    form.style.display = "none";
+       form.style.display = "none";
+       window.scrollTo(0, 0);
+            successMessage.classList.add("show");
+    setTimeout(function(){
+                successMessage.classList.remove("show")
+    },2000)
+    }
+    else{
+    console.log("condition didn't met");
+    }
 });
 
-
-
-
-//add 
+//add
 addButton.addEventListener('click',function(){
     showForm("add");
 });
+

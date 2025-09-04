@@ -6,3 +6,30 @@
 .operations .btn.btn-info{
     margin-right: auto;
 }
+
+/* validation */
+
+p.error-message.hidden{
+    color: red;
+    display: none;
+}
+
+.sucess-message{
+    background-color: white;
+    box-shadow: 5px 5px 10px grey;
+    color: black;
+    position: fixed;
+    width: 250px;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    /* display: none; */
+    padding: 15px;
+    margin-top: 50px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.sucess-message.show{
+    opacity: 1;
+}
