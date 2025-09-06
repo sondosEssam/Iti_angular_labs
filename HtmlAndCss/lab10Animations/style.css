@@ -179,8 +179,9 @@ header {
 main {
   /* width: 90%; */
   /* background-color: teal; */
-  margin: auto;
+  margin: 0px auto;
   padding: 100px 0px;
+  padding-bottom: 0px;
 }
 
 
@@ -494,13 +495,115 @@ transition: opacity 0.3s ease;
 }
 
 
+/* footer */
+
+
+footer{
+
+    background-image: url(images/h1_hero.png);
+  background-position:100%;
+  background-size: cover;
+  color: #fff;
+  background-repeat: no-repeat;
+  height: 80vh;
+  position: relative;
+  margin-bottom: 0;
+}
+.footer-overlay {
+  height: inherit;
+  background-image: linear-gradient(to right, rgba(16, 26, 48, 0.7) 0%, rgba(16, 26, 48, 0.7) 12%, #101a31 91%, #101a31 100%);
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+.footer-all{
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+.footer-left{
+  background-image: url("./images/map.png");
+  height: 85%;
+  width: 60%;
+  align-self: end;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer-right{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  height: 85%;
+  margin-top: 0px;
+}
+.footer-right-up{
+  /* margin-top: 20px; */
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  height: 100%;
+}
+.footer-right-up .info{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  height: 80%;
+  width: 50%;
+}
+.footer-right-up .info .contact{
+  line-height: 2;
+    color: #be9278;
+}
+.footer-right-up .info .contact .icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.footer-right-up .info .contact .icons i{
+  font-size: 15px;
+    color: #be9278;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #ffffff22;
+  cursor: pointer;
+}
+.footer-right-up .info .contact .icons i:hover{
+  background-color: #be9278;
+  color: #fff;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
 
 
 
-
-
-
-
+.footer-right-up .solutions {
+  margin-top: 30px;
+  height: 80%;
+  width: 50%;
+}
+.footer-right-up .solutions h3{
+  margin-bottom: 10px;
+  color: #be9278;
+  font-size: 20px;
+}
+.footer-right-up .solutions ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap:20px;
+  height: 80%;
+}
 /* follow */
 /* =================== footer ========== */
  /* footer {
