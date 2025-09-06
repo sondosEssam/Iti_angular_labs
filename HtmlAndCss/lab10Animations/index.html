@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Html 5</title>
+ 
+  <!-- 
+    html : hypertext markup language.
+
+      tags :
+
+        1- opening closing tag (nested tag) : p , div , span
+        
+
+        2- self closing tag (empty tag) : img , br , hr , link
+
+
+        html5 (latest version) : new elmenets (semantic tags),
+                                  new input types and attrs
+                                  media tags (audio , video)
+                                  graphic tags (canvas , svg)
+                                  js apis (local storage , session storage , geolocation)
+
+       semantic tags : nav , footer, header , main , article , section , aside , details , summary , mark    
+       
+       1- SEO 
+       2- Clean code 
+
+  
+  -->
+       
+       
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <nav>
+    <img src="images/logo.png" alt="">
+    <section class="links">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <a href="#" class="visit-us">visit us</a>
+    </section>
+    <section class="clear"></section>
+  </nav>
+  
+
+  <header>
+    <section class="overlay"></section>
+
+    <section class="header-content">
+      <img src="images/hero-icon.png" alt="" class="autoRotate">
+
+      <h1 class="transtion-right">We make cloths that suit you</h1>
+      <p class="transtion-right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, laboriosam asperiores modi minus praesentium vel facilis nisi explicabo consequatur rem quis.</p>
+
+      <a href="#" class="transtion-right">Our services</a>
+    </section>
+    <section class="header-img">
+      <img src="images/h1_hero1.png" alt="">
+    </section>
+  </header> 
+
+  <main>
+    <div class="offers">
+    <section class="offer">
+      <section class="offer-img">
+        <div class="img-limit">
+        <img src="images/offers1.png" alt="">
+        </div>
+      </section>
+      <section class="offer-content">
+        <span>1</span>
+        <h3>Tailor Sweing</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+      </section>
+    </section>
+
+    <section class="offer">
+      <section class="offer-img">
+        <div class="img-limit">
+        <img src="images/offers2.png" alt="">
+        </div>
+      </section>
+      <section class="offer-content">
+        <span>2</span>
+        <h3>Mesurement</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+      </section>
+    </section>
+
+    <section class="offer">
+      <section class="offer-img">
+        <div class="img-limit">
+        <img src="images/offers3.png" alt="">
+        </div>
+      </section>
+      <section class="offer-content">
+        <span>3</span>
+        <h3>Ready-made</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+      </section>
+    </section>
+</div>
+
+<!-- trailer house -->
+<section class="trailer-house">
+  <div class="trailer-back"></div>
+  <div class="trailer-left">
+
+  </div>
+  <div class="trailer-right">
+    <h2>About our
+tailor house</h2>
+<p class="top">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+<p class="bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.</p>
+
+<button>More about us </button>
+  </div>
+</section>
+
+<section class="services">
+  <div class="services-up">
+    <h3>Why use our services?</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+  </div>
+  <div class="services-down">
+
+
+    <div class="service">
+      <div class="service-icon">
+              <img class="service-img" src="./images/services1.svg" alt="">
+      </div>
+      <div class="service-content">
+        <h3>Tailor Sweing</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+      </div>
+    </div>
+
+
+    <div class="service">
+      <div class="service-icon">
+              <img class="service-img" src="./images/services2.svg" alt="">
+      </div>
+      <div class="service-content">
+        <h3>Tailor Sweing</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+      </div>
+    </div>
+
+
+
+    <div class="service">
+      <div class="service-icon">
+              <img class="service-img" src="./images/services3.svg" alt="">
+      </div>
+      <div class="service-content">
+        <h3>Tailor Sweing</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+      </div>
+    </div>
+
+
+    <div class="service">
+      <div class="service-icon">
+              <img class="service-img" src="./images/services3.svg" alt="">
+      </div>
+      <div class="service-content">
+        <h3>Tailor Sweing</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- image video -->
+<div class="video-image">
+  <a href="#"><i class="fa fa-play"></i></a>
+</div>
+
+<!-- instgram -->
+ <div class="isntgram">
+  <div class="inst-up"><h3>
+    Follow us on isntgram
+  </h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur qui, quas in corporis doloremque.</p>
+</div>
+<div class="inst-down">
+  <div class="im one">
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+  <div class="im two">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+  </div>
+</div>
+ </div>
+     
+    <footer>This template is made with love ❤</footer>
+  </main>
+<script src="./main.js"></script>
+</body>
+
+  <!-- 
+  how to make maps on html 5
+  1- google maps api
+  2- open street maps
+  3- mapbox
+  4- leaflet js
+  5- here maps
+  6- bing maps
+  7- mapquest
+  8- tomtom maps
+  9- yandex maps
+  10- mapillary
+  so, how to use lattiude and longitude to make maps?
+  1- get api key from google maps
+  2- get lattiude and longitude from google maps
+  3- use the api key and lattiude and longitude to make maps
+  4- use the api key and lattiude and longitude to make maps
+  5- use the api key and lattiude and longitude to make maps
+  6- use the api key and lattiude and longitude to make maps
+
+  the code is here :
+  <iframe
+    width="600"
+    height="450"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY
+    &q=Space+Needle,Seattle+WA"></iframe>
+  how we do it on a specific location?
+  replace the "Space+Needle,Seattle+WA" with the location you want to show on the map
+  replace the YOUR_API_KEY with your api key
+  code example:
+  <iframe
+    width="600"
+    height="450"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD
+    &q=Cairo,Egypt"></iframe>
+    
+    -->
