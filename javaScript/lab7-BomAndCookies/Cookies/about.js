@@ -42,8 +42,10 @@ else{
     visits=0;
 }
 
-visits += 1;
 
-history1.innerHTML = history.length;
-document.cookie=`visits=${visits};`
-console.log(history1);
+// history1.innerHTML = visits;
+// window.onload= fucntion (){
+// visits += 1;
+
+// document.cookie=`visits=${visits};`
+// }

@@ -24,10 +24,6 @@ function formatTime(ms) {
   );
 }
 
-
-
-
-
 function startT(){
   if (timer != null) return;
   var startTime = Date.now() - milli;

@@ -33,6 +33,9 @@ var timer = null;
 var isplay = null;
 //logic
 
+
+
+
 //general fucntions 
 function nextDirection()
 {
@@ -141,6 +144,12 @@ function AnimateOut(element,dir="next")
 
 
 }
+
+
+
+
+
+
 
 
 
