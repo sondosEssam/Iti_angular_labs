@@ -1,0 +1,88 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+
+}
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    text-transform: capitalize;
+      color:grey;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+.container .intro{
+    text-align: center;
+}
+.container .images{
+    text-align: center;
+    width: 100%;
+
+    margin-bottom: 50px;
+}
+.container .images .ima{
+    color:white;
+    width: 215px;
+    height:150px;
+    background-color:black;
+    display: inline-block;
+    margin: 15px 15px 50px auto;
+}
+.container .view{
+    margin: 50px 0px;
+    text-align: end;
+    color: orangered;
+}
+.container .cards .card{
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+    margin: 15px;
+}
+.container .cards .card .heading{
+    text-align: left;
+}
+.container .cards .card .heading .small-phtoto{
+display: inline-block;
+    width: 32px;
+height: 32px;
+background-color:black;
+color:rgb(255, 255, 255);
+font-size: 12px;
+padding: 10px;
+}
+.container .cards .card .heading  h3{
+    display: inline-block;
+    text-transform: capitalize;
+    color:grey;
+    font-size: 1.5rem;
+}
+.container .cards .card a{
+    color:orangered;
+    display: block;
+    text-align: end;
+}
+
+a.back{
+    text-decoration: none;
+    display: block;
+    background-color:burlywood;
+    color: white;
+    width:150px;
+    text-align: center;
+    margin: auto;
+}

@@ -1,0 +1,128 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:wght@400;600&display=swap');
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+}
+.introduction{
+    height: 100vh;
+    width: 100%;
+    background-image: url(./back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0px;
+    padding: 50px;
+    position: relative;
+}
+ul, a{
+    text-decoration: none;
+}
+nav{
+    background-color: rgba(255,255,255,0.5);
+    width: 70%;
+    height: 50px;
+    margin: auto;
+    padding: 15px;
+}
+nav .left{
+    float: left;
+    padding: 3px;
+     vertical-align: top; 
+}
+nav .left span{
+    font-size: 2rem;
+    font-weight: 100;
+}
+nav .right{
+    float: right;
+}
+nav .right ul, nav .right ul li{
+    display: inline-block;
+}
+nav .right ul li{
+    margin-right: 15px;
+}
+/* info */
+
+.introduction .info{
+    position: absolute;
+    width: 20%;
+    bottom: 25%;
+left: 36%;
+    text-align: center;
+    text-transform: capitalize;
+    color: aliceblue;
+    font-weight: 900;
+}
+.introduction .info button{
+    background-color:rgb(132, 106, 40);
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 15px 30px;
+    color: white;
+}
+.ellipse{
+    font-size: 4rem;
+    text-align: center;
+color:rgb(157, 157, 27);
+}
+/* servcies */
+.services{
+    width: 70%;
+    height: 50vh;
+    margin: 0px auto;
+    text-align: center;
+}
+.services .cards{
+    text-align: center;
+    width: 100%;
+    height: 200px;
+}
+.services .cards .card{
+    width: 200px;
+    height:200px;
+    background-color:bisque;
+    display: inline-block;
+    margin: 15px 15px 15px auto;
+}
+.protofolio{
+        width: 70%;
+    height: 70vh;
+    margin: 50px auto;
+    text-align: center;
+}
+.protofolio .images{
+display: inline-block;
+}
+.protofolio .images img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 15px;
+}
+a{
+    text-decoration: none;
+    display: block;
+    background-color:burlywood;
+    color: white;
+    width:150px;
+    text-align: center;
+    margin: auto;
+}
